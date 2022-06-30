@@ -37,7 +37,7 @@ router.post('/add', async (req, res) => {
         const return_search_data = await staff_mdb.findOne({
             staff_id: body?.staff_id
         })
-        console.log(return_search_data)
+
         if (return_search_data)
             return res.status(400).json("Staff already exists")
 
@@ -116,7 +116,6 @@ router.get('/all', async (req, res) => {
 
         const return_search_data = await staff_mdb.find().toArray()
 
-        console.log(return_search_data)
         if (!return_search_data)
             return res.status(400).json("Staff does not exists")
 
@@ -135,7 +134,6 @@ router.get('/:staff_id', async (req, res) => {
             staff_id: params?.staff_id?.toString()
         })
 
-        console.log(return_search_data)
         if (!return_search_data)
             return res.status(400).json("Staff does not exists")
 

@@ -14,7 +14,7 @@ router.post('/add', async (req, res) => {
         const return_search_data = await applicant_mdb.findOne({
             ic_num: body?.ic_num
         })
-        console.log(return_search_data)
+
         if (return_search_data)
             return res.status(400).json("Applicant already exists")
 
@@ -93,7 +93,6 @@ router.get('/all', async (req, res) => {
 
         const return_search_data = await applicant_mdb.find().toArray()
 
-        console.log(return_search_data)
         if (!return_search_data)
             return res.status(400).json("Applicant does not exists")
 
@@ -112,7 +111,6 @@ router.get('/:ic_num', async (req, res) => {
             ic_num: params?.ic_num?.toString()
         })
 
-        console.log(return_search_data)
         if (!return_search_data)
             return res.status(400).json("Applicant does not exists")
 
