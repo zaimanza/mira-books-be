@@ -51,7 +51,7 @@ router.post('/update', async (req, res) => {
             { $set: body }
         )
 
-        created_applicant = await applicant_mdb.findOne({
+        const created_applicant = await applicant_mdb.findOne({
             ic_num: body?.ic_num
         })
 
