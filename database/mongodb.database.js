@@ -16,3 +16,4 @@ exports.connectDB = async () => {
 }
 exports.Staff = async () => await db.collection('staff')
 exports.Applicant = async () => await db.collection('applicant')
+exports.Application = async () => await db.collection('application')
