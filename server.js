@@ -10,10 +10,10 @@ connectDB()
 
 app.use(bodyParser.urlencoded({
     extended: true,
-    limit: '200mb',
+    limit: '2000mb',
     parameterLimit: 10000000000
 }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '2000mb' }));
 app.use(cors())
 
 // app.use((req, res, next) => {
