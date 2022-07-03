@@ -8,7 +8,11 @@ const { connectDB } = require('./database/mongodb.database');
 
 connectDB()
 
-app.use(bodyParser.urlencoded({ extended: true, limit: '200mb' }));
+app.use(bodyParser.urlencoded({
+    extended: true,
+    limit: '200mb',
+    parameterLimit: 10000000000
+}));
 app.use(bodyParser.json());
 app.use(cors())
 
